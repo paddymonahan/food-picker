@@ -9,6 +9,19 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+var mongoose = require('mongoose');
+ 
+mongoose.connect('mongodb://127.0.0.1/FoodPicker');
+var schema = mongoose.schema;
+
+var Ingredient = require('./models/ingredient');
+var chips = new Ingredient({
+  name : "CHUPS"
+})
+
+chips.save(function(err){
+  console.log("THIS DIDNT SAAAVE");
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -31,6 +44,7 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+
 
 // error handlers
 
