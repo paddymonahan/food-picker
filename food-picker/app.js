@@ -16,7 +16,7 @@ var schema = mongoose.schema;
 
 var Ingredient = require('./models/ingredient');
 var chips = new Ingredient({
-  name : "CHUPS"
+  name : "CHIPS"
 })
 
 chips.save(function(err){
