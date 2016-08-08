@@ -25,14 +25,10 @@ var recipeSchema = new mongoose.Schema({
 	},
 	instructions: [String],
 	dietType: {
-		type: String
+		type: [String]
 	},
 	calorieCount: {
 		type: Number
-	},
-	ingredients : [ingredient],
-	method : {
-		type : String
 	},
 	serves : {
 		type : Number
