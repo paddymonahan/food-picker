@@ -4,7 +4,16 @@ var ingredientSchema = new mongoose.Schema({
 
 	name : {
 		type : String,
-		index : true
+		index : true,
+		required: true
+	},
+	amount: {
+		type: String,
+		required: true
+	},
+	unit: {
+		type: String,
+		required: true
 	}
 });
 

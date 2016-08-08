@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var addRecipe = require('./routes/addRecipe');
 
 var app = express();
 var mongoose = require('mongoose');
@@ -23,15 +24,9 @@ var listener = app.listen(8888, function(){
     console.log('Listening on port ' + listener.address().port); //Listening on port 8888
 });
 
-var chips = new Ingredient({
-  name : "CHIPS",
-  
-})
 
-chips.save(function(err){
-  if (err !== null)
-    console.log(err);
-})
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -47,6 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/addRecipe', addRecipe);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
