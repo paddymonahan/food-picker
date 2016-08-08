@@ -7,10 +7,10 @@ mongoose.Promise = global.Promise;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	
-	var recipe = new Recipe({
+	console.log('hello');
+	// var recipe = new Recipe({
 
-	})
+	// })
 	// var chips = new Ingredient({
 	//   name : "CHIPS",
 	//   amount : "34",
@@ -21,6 +21,7 @@ router.get('/', function(req, res, next) {
 	//   if (err !== null)
 	//     console.log(err);
 	// })
+	res.status(200).send();
 });
 
 module.exports = router;
