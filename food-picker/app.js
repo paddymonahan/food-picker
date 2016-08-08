@@ -20,7 +20,8 @@ var chips = new Ingredient({
 })
 
 chips.save(function(err){
-  console.log("THIS DIDNT SAAAVE");
+  if (err !== null)
+    console.log(err);
 })
 
 // view engine setup
