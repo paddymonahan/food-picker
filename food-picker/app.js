@@ -15,8 +15,17 @@ mongoose.connect('mongodb://127.0.0.1/FoodPicker');
 var schema = mongoose.schema;
 
 var Ingredient = require('./models/ingredient');
+mongoose.Promise = global.Promise;
+
+var app = require('express')();
+
+var listener = app.listen(8888, function(){
+    console.log('Listening on port ' + listener.address().port); //Listening on port 8888
+});
+
 var chips = new Ingredient({
-  name : "CHIPS"
+  name : "CHIPS",
+  
 })
 
 chips.save(function(err){
