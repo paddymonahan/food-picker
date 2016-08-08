@@ -7,5 +7,5 @@ var stockSchema = new mongoose.Schema({
 		index : true
 	}
 })
- 
+
 module.exports = mongoose.model('Stock', stockSchema); 
